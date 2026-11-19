@@ -279,8 +279,8 @@
 
     <div class="card">
         <div class="photo-frame">
-            <!-- এখানে তোমার পিসির/GitHub-এর আসল ছবির নাম (image_3789a9.png) বসানো হয়েছে -->
-            <img src="image_3789a9.png" alt="Borsha">
+            <!-- যে নামেই সেভ থাকুক না কেন, অটোমেটিক খুঁজে নিয়ে দেখাবে -->
+            <img id="borshaImg" src="image_3789a9.png" alt="Borsha">
         </div>
 
         <h1>Happy Birthday Borsha!</h1>
@@ -314,6 +314,26 @@
     </div>
 
     <script>
+        // ছবির সম্ভাব্য সব নাম অটোমেটিক চেক করবে
+        const imgEl = document.getElementById('borshaImg');
+        const possibleNames = [
+            'image_3789a9.png',
+            'image_3789a9.jpg',
+            'image_3789a9.jpeg',
+            'image_3789a9_3.png',
+            'image_3789a9_2.png',
+            'pic.png',
+            'pic.jpg',
+            'pic_2.png'
+        ];
+        let imgIndex = 0;
+        imgEl.onerror = function() {
+            imgIndex++;
+            if (imgIndex < possibleNames.length) {
+                imgEl.src = possibleNames[imgIndex];
+            }
+        };
+
         const bgMusic = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
         let candleBlown = false;
