@@ -279,7 +279,6 @@
 
     <div class="card">
         <div class="photo-frame">
-            <!-- যে নামেই সেভ থাকুক না কেন, অটোমেটিক খুঁজে নিয়ে দেখাবে -->
             <img id="borshaImg" src="image_3789a9.png" alt="Borsha">
         </div>
 
@@ -314,7 +313,6 @@
     </div>
 
     <script>
-        // ছবির সম্ভাব্য সব নাম অটোমেটিক চেক করবে
         const imgEl = document.getElementById('borshaImg');
         const possibleNames = [
             'image_3789a9.png',
@@ -453,38 +451,89 @@
             }
         }
 
+        // চারপাশ থেকে রঙিন কনফেটি + বাংলা ও ইংরেজিতে বর্ষার নাম ও শুভ জন্মদিন ঝরে পড়া
         const canvas = document.getElementById('confetti');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         const pieces = [];
-        const colors = ['#ff416c', '#ff4b2b', '#ffd700', '#00e676', '#00b0ff', '#e040fb'];
+        const colors = ['#ff416c', '#ff80ab', '#ffd700', '#00e676', '#40c4ff', '#ea80fc', '#ffffff'];
+        const floatingTexts = [
+            'বর্ষা',
+            'Borsha',
+            'শুভ জন্মদিন',
+            'Happy Birthday',
+            'শুভ জন্মদিন বর্ষা',
+            'Happy Birthday Borsha'
+        ];
 
-        for (let i = 0; i < 130; i++) {
+        // ১০০টি রঙিন কনফেটি
+        for (let i = 0; i < 100; i++) {
             pieces.push({
+                isText: false,
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height - canvas.height,
                 size: Math.random() * 8 + 4,
                 color: colors[Math.floor(Math.random() * colors.length)],
-                speedY: Math.random() * 3 + 1.5,
-                speedX: Math.random() * 2 - 1,
+                speedY: Math.random() * 2.5 + 1.2,
+                speedX: Math.random() * 1.6 - 0.8,
                 rotation: Math.random() * 360
             });
         }
 
-        function burstConfetti() { pieces.forEach(p => p.speedY = Math.random() * 6 + 3.5); }
+        // ২৮টি ভাসমান বাংলা ও ইংরেজি নাম এবং জন্মদিনের শুভেচ্ছা লেখা
+        for (let i = 0; i < 28; i++) {
+            pieces.push({
+                isText: true,
+                text: floatingTexts[i % floatingTexts.length],
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                fontSize: Math.random() * 6 + 14,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                speedY: Math.random() * 1.8 + 1.0,
+                speedX: Math.random() * 1.2 - 0.6,
+                rotation: (Math.random() * 24 - 12) // হালকা বাঁকানো থাকবে যাতে সহজে পড়া যায়
+            });
+        }
+
+        function burstConfetti() {
+            pieces.forEach(p => {
+                p.speedY = p.isText ? (Math.random() * 2.5 + 1.5) : (Math.random() * 5 + 3);
+            });
+        }
 
         function updateConfetti() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             pieces.forEach(p => {
-                p.y += p.speedY; p.x += p.speedX; p.rotation += 2;
-                if (p.y > canvas.height) { p.y = -10; p.x = Math.random() * canvas.width; }
+                p.y += p.speedY;
+                p.x += p.speedX;
+
+                if (!p.isText) {
+                    p.rotation += 2;
+                }
+
+                if (p.y > canvas.height + 30) {
+                    p.y = -20;
+                    p.x = Math.random() * canvas.width;
+                }
+
                 ctx.save();
                 ctx.translate(p.x, p.y);
                 ctx.rotate(p.rotation * Math.PI / 180);
-                ctx.fillStyle = p.color;
-                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+
+                if (p.isText) {
+                    ctx.font = `700 ${p.fontSize}px 'Hind Siliguri', sans-serif`;
+                    ctx.fillStyle = p.color;
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
+                    ctx.shadowBlur = 4;
+                    ctx.textAlign = 'center';
+                    ctx.fillText(p.text, 0, 0);
+                } else {
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                }
+
                 ctx.restore();
             });
             requestAnimationFrame(updateConfetti);
