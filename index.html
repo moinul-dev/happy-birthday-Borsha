@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy Birthday Borsha! 🎉</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Pacifico&family=Poppins:ital,wght@0,500;0,600;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Pacifico&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
@@ -71,7 +71,7 @@
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 22px;
-            padding: 20px 16px;
+            padding: 22px 18px;
             max-width: 420px;
             width: 100%;
             text-align: center;
@@ -79,9 +79,9 @@
         }
 
         .photo-frame {
-            width: 98px;
-            height: 98px;
-            margin: 0 auto 8px;
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 10px;
             border-radius: 50%;
             padding: 3.5px;
             background: linear-gradient(45deg, #ff416c, #ffd700, #00e676);
@@ -106,60 +106,27 @@
 
         h1 {
             font-family: 'Pacifico', cursive;
-            font-size: 1.7rem;
+            font-size: 1.75rem;
             background: linear-gradient(to right, #ff9a9e, #fecfef, #ffdde1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             line-height: 1.25;
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: #f8bbd0;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
-        .lyrics-box {
-            margin: 8px auto 12px;
-            padding: 10px 14px;
-            min-height: 54px;
-            background: linear-gradient(135deg, rgba(255, 65, 108, 0.22), rgba(255, 215, 0, 0.12));
-            border: 1px solid rgba(255, 128, 171, 0.4);
-            border-radius: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-        }
-
-        .lyric-line {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.91rem;
-            font-weight: 600;
-            color: #ffe082;
-            text-shadow: 0 0 10px rgba(255, 224, 130, 0.5);
-            letter-spacing: 0.2px;
-            line-height: 1.35;
-        }
-
-        .lyric-line.pop {
-            animation: lyricPop 0.28s ease forwards;
-        }
-
-        @keyframes lyricPop {
-            0% { opacity: 0.3; transform: translateY(5px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .cake-section { margin: 6px auto 12px; cursor: pointer; user-select: none; }
+        .cake-section { margin: 8px auto 14px; cursor: pointer; user-select: none; }
 
         .cake-hint {
-            font-size: 0.83rem;
+            font-size: 0.85rem;
             color: #ffe082;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             animation: pulseText 1.5s infinite;
         }
 
@@ -168,13 +135,13 @@
             50% { opacity: 0.55; }
         }
 
-        .cake-container { position: relative; width: 120px; height: 86px; margin: 0 auto; }
+        .cake-container { position: relative; width: 125px; height: 92px; margin: 0 auto; }
 
         .candle {
             position: absolute;
-            top: 10px; left: 50%;
+            top: 12px; left: 50%;
             transform: translateX(-50%);
-            width: 10px; height: 24px;
+            width: 10px; height: 26px;
             background: repeating-linear-gradient(45deg, #fff, #fff 4px, #ff416c 4px, #ff416c 8px);
             border-radius: 3px;
             z-index: 3;
@@ -182,9 +149,9 @@
 
         .flame {
             position: absolute;
-            top: -15px; left: 50%;
+            top: -16px; left: 50%;
             transform: translateX(-50%);
-            width: 12px; height: 17px;
+            width: 13px; height: 18px;
             background: radial-gradient(circle at 50% 80%, #fff 10%, #ffeb3b 45%, #ff9800 80%, transparent 100%);
             border-radius: 50% 50% 35% 35%;
             box-shadow: 0 0 14px #ff9800, 0 0 22px #ffeb3b;
@@ -196,9 +163,9 @@
 
         .smoke {
             position: absolute;
-            top: -18px; left: 50%;
+            top: -20px; left: 50%;
             transform: translateX(-50%);
-            font-size: 15px;
+            font-size: 16px;
             opacity: 0;
             pointer-events: none;
         }
@@ -207,7 +174,7 @@
 
         @keyframes smokeRise {
             0% { opacity: 0.9; transform: translate(-50%, 0) scale(0.8); }
-            100% { opacity: 0; transform: translate(-50%, -24px) scale(1.4); }
+            100% { opacity: 0; transform: translate(-50%, -26px) scale(1.4); }
         }
 
         @keyframes flicker {
@@ -217,9 +184,9 @@
 
         .cake-top {
             position: absolute;
-            top: 34px; left: 50%;
+            top: 37px; left: 50%;
             transform: translateX(-50%);
-            width: 86px; height: 22px;
+            width: 90px; height: 24px;
             background: #ff80ab;
             border-radius: 10px 10px 4px 4px;
             border-bottom: 4px solid #fff;
@@ -228,16 +195,16 @@
 
         .cake-bottom {
             position: absolute;
-            top: 55px; left: 50%;
+            top: 59px; left: 50%;
             transform: translateX(-50%);
-            width: 112px; height: 26px;
+            width: 116px; height: 28px;
             background: #f06292;
             border-radius: 7px 7px 12px 12px;
             box-shadow: 0 5px 0 #ad1457;
             z-index: 1;
         }
 
-        .btn-group { display: flex; flex-direction: column; gap: 7px; align-items: center; }
+        .btn-group { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 
         .btn {
             background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -259,29 +226,29 @@
             background: rgba(255, 255, 255, 0.16);
             border: 1px solid rgba(255, 255, 255, 0.35);
             color: #ffe082;
-            padding: 6px 15px;
+            padding: 7px 16px;
             border-radius: 50px;
-            font-size: 0.83rem;
+            font-size: 0.85rem;
             cursor: pointer;
             font-family: 'Hind Siliguri', sans-serif;
         }
 
         .music-toggle {
             display: inline-block;
-            margin: 10px auto 0;
+            margin: 12px auto 0;
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: #ffdde1;
             padding: 6px 15px;
             border-radius: 50px;
-            font-size: 0.83rem;
+            font-size: 0.84rem;
             cursor: pointer;
             font-family: 'Hind Siliguri', sans-serif;
         }
 
         .message-box {
-            margin-top: 12px;
-            padding: 12px 14px;
+            margin-top: 14px;
+            padding: 14px;
             background: rgba(0, 0, 0, 0.32);
             border-radius: 14px;
             border-left: 3.5px solid #ff416c;
@@ -294,10 +261,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .message-box p { font-size: 0.92rem; line-height: 1.52; color: #fff; margin-bottom: 6px; }
+        .message-box p { font-size: 0.94rem; line-height: 1.55; color: #fff; margin-bottom: 7px; }
         .message-box p:last-child { margin-bottom: 0; }
         .highlight { color: #ff80ab; font-weight: 700; }
-        .footer-tag { margin-top: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.78); }
+        .footer-tag { margin-top: 12px; font-size: 0.82rem; color: rgba(255, 255, 255, 0.78); }
     </style>
 </head>
 <body>
@@ -320,10 +287,6 @@
 
         <h1>Happy Birthday Borsha!</h1>
         <p class="subtitle">My Dear Dosttt • Many Many Happy Returns of the Day ✨</p>
-
-        <div class="lyrics-box">
-            <div class="lyric-line" id="lyricDisplay">🎷 ✨ Dilruba... ✨ 🎷</div>
-        </div>
 
         <div class="cake-section" onclick="blowCandle()">
             <p class="cake-hint" id="cakeHint">🕯️ ফোনে ফুঁ দাও অথবা মোমবাতিতে টাচ করে নিভিয়ে দাও!</p>
@@ -365,67 +328,11 @@
 
         const bgMusic = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
-        const lyricDisplay = document.getElementById('lyricDisplay');
         let candleBlown = false;
         let isMusicStarted = false;
-        let currentLyricText = '';
 
-        const START_TIME = 26.0;
-        const END_TIME = 118.5;
-
-        // Dilruba.mp3 এর আসল ভোকাল এন্ট্রির সাথে ১.২ সেকেন্ড অ্যাডজাস্ট করা একদম নিখুঁত টাইমিং
-        const syncedLyrics = [
-            { time: 26.0, text: "🎷 ✨ Dilruba... ✨ 🎷" },
-            { time: 31.2, text: "🎵 Qabil-e-Taareef Tu..." },
-            { time: 34.6, text: "✨ Apsara Jaisi Hoobahu..." },
-            { time: 38.0, text: "👀 Dikhe Nigaahon Ko Tu Khoob-Khu..." },
-            { time: 41.4, text: "💫 Tera Asar Har Dam Roobaroo..." },
-            { time: 44.8, text: "❤️ Mehbooba, Main Deewana..." },
-            { time: 46.5, text: "🎶 I just wanna tell you Jaana..." },
-            { time: 48.2, text: "🌧️ Teri Adaon Ke Katre Shabnami..." },
-            { time: 51.6, text: "💖 Dilruba, Dilnasheen, Ba-Khuda Tu Haseen..." },
-            { time: 55.0, text: "👑 Tere Jaisi Hoor Na Koi..." },
-            { time: 58.5, text: "🌹 Tum Mile, Gul Khile..." },
-            { time: 60.2, text: "✨ Jo Tum Mile Gulzaar Zindagi Yeh Ho Gayi..." },
-            { time: 64.2, text: "🎶 Dilruba, Dilnasheen... 🎶" },
-            { time: 72.0, text: "🎷 ✨ Saxophone & Music Vibe ✨ 🎷" },
-            { time: 84.5, text: "💭 Main Bhoolne Laga Hoon Kaam-Kaaj Sab..." },
-            { time: 87.9, text: "🔒 Kyunki Tune Yeh Dil Ko Qaid Kar Liya..." },
-            { time: 91.3, text: "💓 Khhalbali Machi, Aqal Na Bachi..." },
-            { time: 94.7, text: "🌟 Dakhal Tune Zindagi Mein Is Qadar Diya..." },
-            { time: 98.1, text: "🔥 Bana Main Majnu, Mastana, Aashiq Purana..." },
-            { time: 101.5, text: "💖 Sun Le Dil-Fenk Hoon Nahin..." },
-            { time: 104.8, text: "❤️ Mehbooba, Main Deewana, Tell You Jaana..." },
-            { time: 108.2, text: "🌧️ Teri Adaon Ke Katre Shabnami..." },
-            { time: 111.5, text: "💖 Dilruba, Dilnasheen, Ba-Khuda Tu Haseen..." },
-            { time: 115.0, text: "👑 Tere Jaisi Hoor Na Koi..." }
-        ];
-
-        function updateLyricByTime(currentTime) {
-            let activeLine = syncedLyrics[0].text;
-            for (let i = 0; i < syncedLyrics.length; i++) {
-                if (currentTime >= syncedLyrics[i].time) {
-                    activeLine = syncedLyrics[i].text;
-                } else {
-                    break;
-                }
-            }
-            if (activeLine !== currentLyricText) {
-                currentLyricText = activeLine;
-                lyricDisplay.innerText = activeLine;
-                lyricDisplay.classList.remove('pop');
-                void lyricDisplay.offsetWidth;
-                lyricDisplay.classList.add('pop');
-            }
-        }
-
-        function syncLoop() {
-            if (!bgMusic.paused) {
-                updateLyricByTime(bgMusic.currentTime);
-            }
-            requestAnimationFrame(syncLoop);
-        }
-        requestAnimationFrame(syncLoop);
+        const START_TIME = 26;
+        const END_TIME = 115;
 
         function forcePlayFromStart() {
             bgMusic.muted = false;
@@ -433,7 +340,6 @@
 
             const startPlay = () => {
                 bgMusic.currentTime = START_TIME;
-                updateLyricByTime(START_TIME);
                 bgMusic.play().then(() => {
                     isMusicStarted = true;
                     musicBtn.innerText = '🔊 গান বন্ধ করো';
@@ -477,8 +383,6 @@
                 bgMusic.pause();
                 bgMusic.currentTime = START_TIME;
                 musicBtn.innerText = '🔁 আবার বাজাও';
-                lyricDisplay.innerText = '🎂 Happy Birthday Dosttt! 💖';
-                currentLyricText = '';
             }
         });
 
